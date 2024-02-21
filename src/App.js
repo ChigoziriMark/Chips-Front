@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Tab, Tabs } from "@mui/material";
+import Movies from "./MoviesTable";
+import Series from "./SeriesTable";
+import Actors from "./Actors";
+import "./App.css";
 
-function App() {
+
+const App = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Chips Movies Log</h1>
+      <div className="content-box">
+        <Tabs value={activeTab} onChange={handleTabChange}>
+          <Tab label="Actors" />
+          <Tab label="Series" />
+          <Tab label="Movies"/>
+        </Tabs>
+        {activeTab === 0 && <Actors />}
+        {activeTab === 1 && <Series />}        
+        {activeTab === 2 && <Movies/>}
+      </div>    
     </div>
   );
-}
+};
+
 
 export default App;
