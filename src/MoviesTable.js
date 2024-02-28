@@ -4,11 +4,13 @@ import "./buttonStyles.css";
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
 
-const MoviesTable = ({ movie }) => {
+const MoviesTable = ({ movies }) => {
+  
+  
   const [sortConfig, setSortConfig] = useState({
     key: "",
     direction: "",
-  });
+  }); 
 
   const handleSort = (key) => {
     let direction = "asc";
@@ -76,7 +78,7 @@ const MoviesTable = ({ movie }) => {
     },
   ];
 
-  const sortedMovies = [...movie].sort((a, b) => {
+  const sortedMovies = [...movies].sort((a, b) => {
     const aValue = a[sortConfig.key];
     const bValue = b[sortConfig.key];
 
@@ -99,7 +101,7 @@ const MoviesTable = ({ movie }) => {
     return csvItem;
   });
 
-  const jsonData = JSON.stringify(movie, null, 2);
+  const jsonData = JSON.stringify(movies, null, 2);
   const jsonBlob = new Blob([jsonData], { type: "application/json" });
   const jsonUrl = URL.createObjectURL(jsonBlob);
 

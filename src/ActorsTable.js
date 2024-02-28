@@ -7,6 +7,7 @@ import "react-tippy/dist/tippy.css";
 
 
 const ActorsTable = ({ actor }) => {
+  console.log(2)
   const [sortConfig, setSortConfig] = useState({
     key: "",
     direction: "",

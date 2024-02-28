@@ -1,0 +1,51 @@
+/* FilterForm.module.css */
+
+.filter-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .filter-form {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* This creates space between form items */
+  }
+  
+  .filter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-item label {
+    margin-bottom: 5px;
+  }
+  
+  .filter-item input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .submit-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 2px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: auto; /* Align with other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vh;
+  }
+  
+  
+  .submit-button:hover {
+    background-color: darkred;
+  }
+  

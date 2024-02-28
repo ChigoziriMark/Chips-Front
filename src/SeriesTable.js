@@ -4,7 +4,8 @@ import "./buttonStyles.css";
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
 
-const SeriesTable = ({ series }) => {
+const SeriesTable = ({ serie }) => {
+  console.log(2)
   const [sortConfig, setSortConfig] = useState({
     key: "",
     direction: "",
@@ -81,7 +82,7 @@ const SeriesTable = ({ series }) => {
     },
   ];
 
-  const sortedSeries = [...series].sort((a, b) => {
+  const sortedSeries = [...serie].sort((a, b) => {
     const aValue = a[sortConfig.key];
     const bValue = b[sortConfig.key];
 
@@ -104,7 +105,7 @@ const SeriesTable = ({ series }) => {
     return csvItem;
   });
 
-  const jsonData = JSON.stringify(series, null, 2);
+  const jsonData = JSON.stringify(serie, null, 2);
   const jsonBlob = new Blob([jsonData], { type: "application/json" });
   const jsonUrl = URL.createObjectURL(jsonBlob);
 

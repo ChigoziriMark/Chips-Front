@@ -44,7 +44,7 @@ const Actors = () => {
         setShowTable(false);
       });
   };
-
+  
   return (
     <div>
       <h1>Actors</h1>

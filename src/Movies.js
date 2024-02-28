@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FilterForm from "./filterform";
-import Movies from "./MoviesTable";
+import MoviesFilterForm from "./MoviesFilterForm";
+import MoviesTable from "./MoviesTable";
 const baseURL = "http://localhost:8599/Diagnosis";
 
 const Movies = () => {
-  const [movie, setMovies] = useState(null);
+  const [movies, setMovies] = useState(null);
   const [showTable, setShowTable] = useState(false);
-  const [inputValueFirstName, setInputValueFirstName] = useState("");
-  const [inputValueLastName, setInputValueLastName] = useState("");
+  const [inputValueTitle, setInputValueTitle] = useState("");
+  const [inputValueGenre, setInputValueGenre] = useState("");
   const [ setSortConfig] = useState({
     key: "",
     direction: "",
   });
 
-  const handleInputChangeFirstName = (event) => {
-    setInputValueFirstName(event.target.value);
+  const handleInputChangeTitle = (event) => {
+    setInputValueTitle(event.target.value);
   };
 
-  const handleInputChangeLastName = (event) => {
-    setInputValueLastName(event.target.value);
+  const handleInputChangeGenre = (event) => {
+    setInputValueGenre(event.target.value);
   };
 
 
@@ -29,8 +29,8 @@ const Movies = () => {
     axios
       .get(baseURL, {
         params: {
-          firstName: inputValueFirstName,
-          lastName: inputValueLastName,
+          title: inputValueTitle,
+          genre: inputValueGenre,
    
         },
       })
@@ -48,15 +48,15 @@ const Movies = () => {
   return (
     <div>
       <h1>Movies</h1>
-      <FilterForm
+      <MoviesFilterForm
         onFilterSubmit={handleFilterSubmit}
-        inputValueFirstName={inputValueFirstName}
-        onInputChangeFirstName={handleInputChangeFirstName}
-        inputValueLastName={inputValueLastName}
-        onInputChangeLastName={handleInputChangeLastName}
+        inputValueTitle={inputValueTitle}
+        onInputChangeTitle={handleInputChangeTitle}
+        inputValueGenre={inputValueGenre}
+        onInputChangeGenre={handleInputChangeGenre}
 
       />
-      {showTable && <MoviesTable movie={movie} setSortConfig={setSortConfig} />}
+      {showTable && <MoviesTable movies={movies} setSortConfig={setSortConfig} />}
     </div>
   );
 };
