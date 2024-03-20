@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import FilterForm from "./filterform";
 import ActorsTable from "./ActorsTable";
-const baseURL = "http://localhost:7176/ChipsMovie/actors";
+const baseURL = "https://localhost:7176/swagger/ChipsMovie/actors";
 
 const Actors = () => {
   const [actor, setActor] = useState(null);

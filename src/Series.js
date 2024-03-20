@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import SeriesTable from "./SeriesTable";
 import SeriesFilterForm from "./SeriesFilterForm";
-const baseURL = "http://localhost:7176/ChipsMovie/series";
+const baseURL = "https://localhost:7176/ChipsMovie/series";
 
 const Series = () => {
   const [series, setSeries] = useState(null);

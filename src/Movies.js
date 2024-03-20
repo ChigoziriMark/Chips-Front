@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import MoviesFilterForm from "./MoviesFilterForm";
 import MoviesTable from "./MoviesTable";
-const baseURL = "http://localhost:7176/ChipsMovie/movies";
+const baseURL = "https://localhost:7176/ChipsMovie/movies";
 
 const Movies = () => {
   const [movies, setMovies] = useState(null);
