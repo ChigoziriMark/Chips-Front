@@ -9,7 +9,7 @@ const Series = () => {
   const [showTable, setShowTable] = useState(false);
   const [inputValueTitle, setInputValueTitle] = useState("");
   const [inputValueGenre, setInputValueGenre] = useState("");
-  const [ setSortConfig] = useState({
+  const [ sortConfig, setSortConfig] = useState({
     key: "",
     direction: "",
   });
